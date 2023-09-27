@@ -26,6 +26,7 @@ public class Hellojava17 {
 
     }
 
+    //Base Sealed class
     public abstract sealed class FruitSealed permits AppleSealed, PearSealed {
     }
 
