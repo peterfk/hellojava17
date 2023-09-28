@@ -14,6 +14,7 @@ import java.util.stream.Stream;
  */
 public class Hellojava17 {
 
+    //Fruit enum
     enum Fruit {
         APPLE, PEAR, ORANGE, LEMON
     };
