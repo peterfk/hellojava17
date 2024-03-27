@@ -37,6 +37,7 @@ public class Hellojava17 {
     public final class PearSealed extends FruitSealed {
     }
 
+	//main class
     public static void main(String[] args) {
 
         var test = "  testing var type.";
