@@ -28,13 +28,16 @@ public class Hellojava17 {
     }
 
     //Base Sealed class
-    public abstract sealed class FruitSealed permits AppleSealed, PearSealed {
+    public abstract sealed class FruitSealed permits AppleSealed, GrapeSealed, PearSealed {
     }
 
     public non-sealed class AppleSealed extends FruitSealed {
     }
 
     public final class PearSealed extends FruitSealed {
+    }
+
+    public final class GrapeSealed extends FruitSealed {
     }
 
 	//main class
