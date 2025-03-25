@@ -23,8 +23,15 @@ public class Hellojava17 {
         WHITE, BLUE
     };
 
-    public record GrapeRecord2(Color color, int nbrOfPits) {
+    public record GrapeRecord(Color color, int nbrOfPits) {
 
+        public GrapeRecord {
+            System.out.println("Parameter color=" + color + ", Field color=" + this.color());
+            System.out.println("Parameter nbrOfPits=" + nbrOfPits + ", Field nbrOfPits=" + this.nbrOfPits());
+            if (color == null) {
+                throw new IllegalArgumentException("Color may not be null");
+            }
+        }
     }
 
     //Base Sealed class
@@ -100,8 +107,7 @@ public class Hellojava17 {
     }
 
     private static void basicRecord() {
-        record GrapeRecord(Color color, int nbrOfPits) {
-
+        record GrapeRecord3(Color color, int nbrOfPits) {
         }
         GrapeRecord grape1 = new GrapeRecord(Color.BLUE, 1);
         GrapeRecord grape2 = new GrapeRecord(Color.WHITE, 2);
@@ -110,6 +116,9 @@ public class Hellojava17 {
         System.out.println("Grape 1 equals grape 2? " + grape1.equals(grape2));
         GrapeRecord grape1Copy = new GrapeRecord(grape1.color(), grape1.nbrOfPits());
         System.out.println("Grape 1 equals its copy? " + grape1.equals(grape1Copy));
+
+        //test case
+//        GrapeRecord grapeNull = new GrapeRecord(null, 2);
     }
 
     private void sealedClasses() {
