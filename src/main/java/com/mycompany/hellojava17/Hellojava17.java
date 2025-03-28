@@ -14,6 +14,8 @@ import java.util.stream.Stream;
  */
 public class Hellojava17 {
 
+    private int i = 0;
+
     //Fruit enum
     enum Fruit {
         APPLE, PEAR, ORANGE, LEMON
@@ -79,6 +81,10 @@ public class Hellojava17 {
         
         oldStyleList();
         streamToList();
+
+        Hellojava17 hellojava17 = new Hellojava17();
+        hellojava17.sealedClasses();
+
         
     }
 
@@ -127,6 +133,26 @@ public class Hellojava17 {
         FruitSealed fruit = apple;
         class Avocado extends AppleSealed {
         };
+
+        i=2;
+        System.out.println("i=" + i);
+
+        processFruit(apple);
+        processFruit(pear);
+        processFruit(fruit);
+
+        Avocado avocado = new Avocado();
+        processFruit(avocado);  //thinks it's an Apple
+    }
+
+    private void processFruit(FruitSealed fruit) {
+
+        //Algebraic Data types, all classes accounted for so no need for default case
+        switch (fruit) {
+            case AppleSealed appleSealed -> System.out.println("Is Apple");
+            case PearSealed pearSealed -> System.out.println("Is Pear");
+            case GrapeSealed grapeSealed -> System.out.println("Is Grape");
+        }
     }
 
     private static void oldStyle() {
